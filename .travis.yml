@@ -1,18 +1,19 @@
 sudo: false
 language: node_js
+
 node_js:
   - 12
+
 branches:
   only:
     - main
 
 before_install:
+  - git clone https://github.com/theme-next/hexo-theme-next.git themes/next
   - npm install -g hexo-cli
 
 install:
   - npm install
-  - npm install hexo-deployer-git --save
-  - npm install hexo-generator-searchdb --save
 
 script:
   - hexo clean
@@ -21,5 +22,5 @@ script:
 after_script:
   - git config user.name "hqwhqwhq"
   - git config user.email "hqwhqwhq@163.com"
-  - sed -i "s/github_token/${blog_token}/g" ./_config.yml
+  - sed -i "s/blog_token/${blog_token}/g" ./_config.yml
   - hexo deploy
