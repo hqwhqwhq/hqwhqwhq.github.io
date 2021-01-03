@@ -1,18 +1,25 @@
 sudo: false
 language: node_js
 node_js:
-  - 12 # use nodejs v10 LTS
-cache: npm
+  - 12
 branches:
   only:
-    - main # build master branch only
+    - main
+
+before_install:
+  - npm install -g hexo-cli
+
+install:
+  - npm install
+  - npm install hexo-deployer-git --save
+  - npm install hexo-generator-searchdb --save
+
 script:
-  - hexo generate # generate static files
-deploy:
-  provider: pages
-  skip-cleanup: true
-  github-token: $blog_token
-  keep-history: true
-  on:
-    branch: master
-  local-dir: public
+  - hexo clean
+  - hexo generate
+
+after_script:
+  - git config user.name "hqwhqwhq"
+  - git config user.email "hqwhqwhq@163.com"
+  - sed -i "s/github_token/${blog_token}/g" ./_config.yml
+  - hexo deploy
