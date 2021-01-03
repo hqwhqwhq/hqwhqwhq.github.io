@@ -105,4 +105,4 @@ theme: next
 deploy:
   type: git
   repo: https://github.com/hqwhqwhq/hqwhqwhq.github.io
-  branch: blog
+  branch: gh-pages
