@@ -4,16 +4,16 @@
 
 # Site
 title: hqwhqwhq's blog
-subtitle: ''
+subtitle: '这个博客将会被长期维护'
 description: ''
 keywords:
 author: hqwhqwhq
-language: en
-timezone: ''
+language: zh-CN
+timezone: 'Asia/Shanghai'
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://example.com/child' and root as '/child/'
-url: http://example.com
+url: http://hqwhqwhq.github.io
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
