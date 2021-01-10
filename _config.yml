@@ -106,3 +106,9 @@ deploy:
   type: git
   repo: https://blog_token@github.com/hqwhqwhq/hqwhqwhq.github.io
   branch: blog_display
+
+excerpt:
+  depth: 5
+  excerpt_excludes: []
+  more_excludes: []
+  hideWholePostExcerpts: true
