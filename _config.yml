@@ -112,3 +112,7 @@ excerpt:
   excerpt_excludes: []
   more_excludes: []
   hideWholePostExcerpts: true
+
+posts:
+  repo: https://github.com/hqwhqwhq/hqwhqwhq.github.io.git
+  branch: posts
