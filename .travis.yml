@@ -10,6 +10,7 @@ cache:
 branches:
   only:
     - main
+    - posts
 
 before_install:
   - npm install -g hexo-cli
