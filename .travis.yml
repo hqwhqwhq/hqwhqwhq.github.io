@@ -11,14 +11,16 @@ branches:
 
 before_install:
   - npm install -g hexo-cli
+  - npm install hexo-posts-sync --save
 
 install:
   - npm install
 
 script:
-  - hexo clean
+  - hexo generate
+
+after_script:
   - git config user.name "hqwhqwhq"
   - git config user.email "hqwhqwhq@163.com"
   - sed -i "s/blog_token/${blog_token}/g" ./_config.yml
-  - hexo generate
   - hexo deploy
