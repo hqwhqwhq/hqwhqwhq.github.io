@@ -4,9 +4,6 @@ language: node_js
 node_js:
   - 12
 
-cache:
-  npm: true
-
 branches:
   only:
     - main
@@ -20,9 +17,8 @@ install:
 
 script:
   - hexo clean
-
-after_script:
   - git config user.name "hqwhqwhq"
   - git config user.email "hqwhqwhq@163.com"
   - sed -i "s/blog_token/${blog_token}/g" ./_config.yml
-  - hexo g -d
+  - hexo generate
+  - hexo deploy
