@@ -4,22 +4,28 @@ language: node_js
 node_js:
   - 12
 
+git:
+  quiet: true
+  depth: 1
+  submodules: true
+
 branches:
   only:
     - main
 
 before_install:
   - npm install -g hexo-cli
-  - npm install hexo-posts-sync --save
 
 install:
   - npm install
 
-script:
-  - hexo generate
-
-after_script:
+before_script:
   - git config user.name "hqwhqwhq"
   - git config user.email "hqwhqwhq@163.com"
   - sed -i "s/blog_token/${blog_token}/g" ./_config.yml
+
+script:
+  - hexo clean
+  - hexo generate
+  - hexo generate
   - hexo deploy
